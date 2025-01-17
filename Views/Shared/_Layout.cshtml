@@ -29,7 +29,7 @@
                     <div class="navbar-nav flex-grow-1">
                         <form asp-controller = "Pretraga" asp-action="Pretrazi" class="search-form">
                             <input class="search-text" type="text" placeholder="Traži..." />
-                             <button class="search-btn" type=submit" asp-action="Pretrazi">
+                             <button class="search-btn" type="submit" asp-action="Pretrazi" asp-controller="Pretraga">
                                  <img src="~/img/lupa.png" alt="S" />
                              </button>
                         </form>
