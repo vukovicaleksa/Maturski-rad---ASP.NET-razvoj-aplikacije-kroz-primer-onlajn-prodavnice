@@ -28,8 +28,15 @@
                     </div>
                     <div class="navbar-nav flex-grow-1">
                         <form asp-controller = "Pretraga" asp-action="Pretrazi" class="search-form">
-                            <input class="search-text" type="text" placeholder="Traži..." />
-                             <button class="search-btn" type="submit" asp-action="Pretrazi" asp-controller="Pretraga">
+                            @if (ViewData["TekstPretrage"] == null)
+                            {
+                                <input class="search-text" type="text" placeholder="Pretraži..." name="tekstPretrage" />
+                            }
+                            else
+                            {
+                                <input class="search-text" type="text" placeholder=@ViewData["TekstPretrage"] value=@ViewData["TekstPretrage"] name="tekstPretrage" /> @*Nije radilo zato sto name mora da ima vrednost parametra u funkciji*@
+                            }
+                            <button class="search-btn" type="submit" asp-action="Pretrazi" asp-controller="Pretraga">
                                  <img src="~/img/lupa.png" alt="S" />
                              </button>
                         </form>

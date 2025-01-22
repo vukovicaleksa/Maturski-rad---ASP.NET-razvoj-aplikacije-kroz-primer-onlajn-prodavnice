@@ -12,7 +12,7 @@ namespace Maturski_rad___ASP.NET_razvoj_aplikacije_kroz_primer_onlajn_prodavnice
         {
             Console.WriteLine(tekstPretrage);
 
-            TempData["pretraga"] = tekstPretrage;
+            ViewData["TekstPretrage"] = tekstPretrage; //ViewData mozda nije najbolji izbor za ovo
             return View("../_RezultatiPretrage");
         }
     }
