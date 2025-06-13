@@ -54,7 +54,7 @@ namespace Maturski_rad___ASP.NET_razvoj_aplikacije_kroz_primer_onlajn_prodavnice
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id")] Proizvod proizvod)
+        public async Task<IActionResult> Create([Bind("Id,Ime,Kategorija,Cena")] Proizvod proizvod)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace Maturski_rad___ASP.NET_razvoj_aplikacije_kroz_primer_onlajn_prodavnice
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id")] Proizvod proizvod)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Ime,Kategorija,Cena")] Proizvod proizvod)
         {
             if (id != proizvod.Id)
             {

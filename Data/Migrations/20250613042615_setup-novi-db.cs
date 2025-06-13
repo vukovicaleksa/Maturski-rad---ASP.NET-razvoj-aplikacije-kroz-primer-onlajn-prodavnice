@@ -5,7 +5,7 @@
 namespace Maturski_rad___ASP.NET_razvoj_aplikacije_kroz_primer_onlajn_prodavnice.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class setup : Migration
+    public partial class setupnovidb : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
