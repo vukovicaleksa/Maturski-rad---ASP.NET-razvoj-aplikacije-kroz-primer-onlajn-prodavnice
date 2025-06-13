@@ -20,7 +20,11 @@
             </div>
             <div class="form-group">
                 <label asp-for="Kategorija" class="control-label"></label>
-                <select asp-for="Kategorija" class="form-control"></select>
+                <select asp-for="Kategorija" class="form-control">
+                    <option value=1>Bela tehnika</option>
+                    <option value=2>Računari</option>
+                    <option value=3>TV, audio, video</option>
+                </select>
                 <span asp-validation-for="Kategorija" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -29,14 +33,14 @@
                 <span asp-validation-for="Cena" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Sačuvaj" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Nazad</a>
 </div>
 
 @section Scripts {

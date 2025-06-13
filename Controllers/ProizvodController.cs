@@ -24,6 +24,10 @@ namespace Maturski_rad___ASP.NET_razvoj_aplikacije_kroz_primer_onlajn_prodavnice
         {
             return View(await _context.Proizvod.ToListAsync());
         }
+        public async Task<IActionResult> PrikaziRezultate(string tekstPretrage)
+        {
+            return View(await _context.Proizvod.Where(j => (j.Ime).Contains(tekstPretrage)).ToListAsync());
+        }
 
         // GET: Proizvod/Details/5
         public async Task<IActionResult> Details(int? id)
