@@ -1,15 +1,20 @@
-﻿namespace Maturski_rad___ASP.NET_razvoj_aplikacije_kroz_primer_onlajn_prodavnice.Models
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace Maturski_rad___ASP.NET_razvoj_aplikacije_kroz_primer_onlajn_prodavnice.Models
 {
 
     public enum Kategorije
     {
         Nijedna,
-        Vrsta1,
-        Vrsta2,
-        Vrsta3
+        Bela_tehnika,
+        Racunari,
+        TV_audio_video
     }
+
+    [PrimaryKey(nameof(Id))]
     public class Popust
     {
+        public int Id { get; }
         public double Procenat { get; }
         public DateOnly Pocetak { get; }
         public DateOnly Kraj { get; }
@@ -19,10 +24,12 @@
             Procenat = 0;
             Pocetak = DateOnly.FromDateTime(DateTime.Today.Date);
             Kraj = DateOnly.FromDateTime(DateTime.Today.Date);
+            Id++;
         }
 
-        public Popust(double procenat, DateOnly kraj, DateOnly? pocetak)
+        public Popust(int id, double procenat, DateOnly kraj, DateOnly? pocetak)
         {
+            Id = id;
             if (procenat > 0)
             {
                 Console.Error.WriteLine("Procenat popusta je veći od nula. Pretpostavljamo da je greška u znaku. Biće prikazano smanjenje cene umesto njenog povećanja");
@@ -46,6 +53,7 @@
         }
 
     }
+    [PrimaryKey(nameof(Id))]
     public class Proizvod
     {
         public int Id { get; }
@@ -87,7 +95,7 @@
             Ime = ime;
             Kategorija = kategorija;
             Cena = cena;
-            PopustNaProizvod = new Popust(procenatPopusta, krajPopusta, pocetakPopusta);
+            PopustNaProizvod = new Popust(id, procenatPopusta, krajPopusta, pocetakPopusta);
         }
     }
 }
