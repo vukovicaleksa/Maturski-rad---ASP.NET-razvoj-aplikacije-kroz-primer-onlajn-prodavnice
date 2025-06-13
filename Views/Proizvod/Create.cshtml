@@ -19,7 +19,11 @@
             </div>
             <div class="form-group">
                 <label asp-for="Kategorija" class="control-label"></label>
-                <select asp-for="Kategorija" class="form-control"></select>
+                <select asp-for="Kategorija" class="form-control">
+                    <option value=1>Bela tehnika</option>
+                    <option value=2>Računari</option>
+                    <option value=3>TV, audio, video</option>
+                </select>
                 <span asp-validation-for="Kategorija" class="text-danger"></span>
             </div>
             <div class="form-group">
